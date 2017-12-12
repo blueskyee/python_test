@@ -1,0 +1,70 @@
+---
+data_subject: prebid_traffic_log
+partition: 
+    - dt
+    - agent
+input_path: s3://vpon.dmp.input.prod/dmp.3rdparty/Quadas/pre_bid_traffic_log/
+output_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log/
+streaming:
+    host: 127.0.0.1
+    topic: data_quality
+schema:
+    timestamp: 
+        type: bigint
+    click_id: 
+        type: string
+    bid_price: 
+        type: double
+        min_value: 0
+        max_value: 100.0
+    seller_id: 
+        type: string
+        valid_value: 
+            - 6
+            - 12
+            - 45
+    device_id: 
+        type: string
+    site_id: 
+        type: string
+    placement_id: 
+        type: string
+    ip: 
+        type: string
+    path: 
+        type: string
+    bidding_log: 
+        type: string
+    imp_type: 
+        type: string
+    imp_width: 
+        type: double
+    imp_height: 
+        type: double
+    user_agent: 
+        tyep: string
+    lang: 
+        type: string
+    gaid: 
+        type: string
+    gaid_md5: 
+        type: string
+    idfa: 
+        type: string
+    idfa_md5: 
+        type: string
+    imei: 
+        type: string
+    imei_md5: 
+        type: string
+    mac_md5: 
+        type: string
+    android_id: 
+        type: string
+    android_id_md5: 
+        type: string
+    cookie_id: 
+        type: string
+    connection_type: 
+        type: string  
+...
