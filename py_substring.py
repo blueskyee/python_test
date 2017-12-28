@@ -16,3 +16,7 @@ test_substr='re'
 print(test_str.find(test_substr))
 print(test_str.find(test_substr, 5))
 
+##replace str in list
+reports = ['cost_report.sql','io_report.sql','revenue_report.sql']
+reports = [r.replace(r, r.split(".",1)[0]) for r in reports]
+print(reports)
