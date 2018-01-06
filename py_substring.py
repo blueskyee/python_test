@@ -20,3 +20,11 @@ print(test_str.find(test_substr, 5))
 reports = ['cost_report.sql','io_report.sql','revenue_report.sql']
 reports = [r.replace(r, r.split(".",1)[0]) for r in reports]
 print(reports)
+
+## regex
+import re
+m = re.search('(?<=abc)de', 'abcdefg')
+print(m.group(0))
+m = re.search('(?<=-)\w+', 'spam-eggs')
+print(m.group(0))
+
