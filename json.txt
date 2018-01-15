@@ -1,0 +1,1 @@
+"{\"response\": {\"code\": 200, \"results\": {\"topic\": \"topic_name\", \"valid_dest\": \"valid_s3_path\"}}}"
