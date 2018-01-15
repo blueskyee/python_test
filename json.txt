@@ -1,1 +1,1 @@
-"{\n    \"response\": {\n        \"code\": 200,\n        \"results\": {\n            \"topic\": \"topic_name\",\n            \"valid_dest\": \"valid_s3_path\"\n        }\n    }\n}"
+"{\n    \"response\": {\n        \"code\": 200,\n        \"results\": {\n            \"error_msg\": \"error from service\"\n        }\n    }\n}"
