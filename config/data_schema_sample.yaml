@@ -1,0 +1,34 @@
+---
+data_subject: prebid_traffic_log
+partition:
+    - dt
+    - agent
+input_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log/
+valid_output_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log_valid/
+invalid_output_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log_invalid/
+streaming:
+    host: 127.0.0.1
+    total_topic: prebid_traffic_log_total
+    valid_topic: prebid_traffic_log_valid
+schema:
+    timestamp:
+        type: bigint
+    click_id:
+        type: string
+    bid_price:
+        type: double
+        min_value: 0
+        max_value: 100.0
+    seller_id:
+        type: string
+        valid_value:
+            - 6
+            - 12
+            - 45
+    device_id:
+        type: string
+    site_id:
+        type: string
+    placement_id:
+        type: string
+...
