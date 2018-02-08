@@ -1,8 +1,12 @@
 ---
 data_subject: prebid_traffic_log
-partition:
+partition: 
     - dt
     - agent
+data_property:
+    format: csv
+    header: false
+    sep: \t
 input_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log/
 valid_output_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log_valid/
 invalid_output_path: s3://vpon.dsp/hive/warehouse/prebid_traffic_log_invalid/
@@ -11,24 +15,62 @@ streaming:
     total_topic: prebid_traffic_log_total
     valid_topic: prebid_traffic_log_valid
 schema:
-    timestamp:
+    timestamp: 
         type: bigint
-    click_id:
+    click_id: 
         type: string
-    bid_price:
-        type: double
+    bid_price: 
+        type: string
         min_value: 0
         max_value: 100.0
-    seller_id:
-        type: string
-        valid_value:
+    seller_id: 
+        type: int
+        valid_value: 
             - 6
             - 12
             - 45
-    device_id:
+    device_id: 
         type: string
-    site_id:
+    site_id: 
         type: string
-    placement_id:
+    placement_id: 
         type: string
+    ip: 
+        type: string
+    path: 
+        type: string
+    bidding_log: 
+        type: string
+    imp_type: 
+        type: string
+    imp_width: 
+        type: string
+    imp_height: 
+        type: string
+    user_agent: 
+        type: string
+    lang: 
+        type: string
+    gaid: 
+        type: string
+    gaid_md5: 
+        type: string
+    idfa: 
+        type: string
+    idfa_md5: 
+        type: string
+    imei: 
+        type: string
+    imei_md5: 
+        type: string
+    mac_md5: 
+        type: string
+    android_id: 
+        type: string
+    android_id_md5: 
+        type: string
+    cookie_id: 
+        type: string
+    connection_type: 
+        type: string  
 ...
